@@ -15,7 +15,6 @@ const Main: React.FC = () => {
 export default Main;
 
 const MainDiv = styled.div`
-  position: relative;
    background:url(${HeaderImg}) no-repeat;
    background-size: cover;
    background-position: center;

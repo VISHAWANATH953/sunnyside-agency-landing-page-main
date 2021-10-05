@@ -27,6 +27,11 @@ const ImgBox = styled.div`
   align-items: center;
   justify-content: flex-end;
   flex-flow: column nowrap;
+
+  @media only screen and (max-width: 768px) {
+    width: 100vw;
+    height: 50vh;
+  }
 `;
 
 const Img = styled.img`

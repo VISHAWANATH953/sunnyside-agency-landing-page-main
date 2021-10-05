@@ -34,7 +34,10 @@ const ImgLRInfo = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-between;
-  align-content: center;
+  @media only screen and (max-width: 600px) {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `;

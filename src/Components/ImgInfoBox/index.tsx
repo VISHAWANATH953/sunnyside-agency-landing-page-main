@@ -29,5 +29,5 @@ const ImgInfoCom = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
 `;

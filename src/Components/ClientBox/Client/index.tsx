@@ -38,13 +38,19 @@ const Img = styled.img`
 `;
 
 const Desc = styled.p`
-margin: 8rem 0 2.5rem 0;
-padding:0 2vw;
-font-size: 1.7rem;
-font-weight:400;
+  margin: 8rem 0 2.5rem 0;
+  padding: 0 2vw;
+  font-size: 1.7rem;
+  font-weight: 400;
+
+  @media only screen and (max-width: 768px) {
+    margin: 2.5rem 0;
+  }
 `;
 
-const ClientInfo = styled.div``;
+const ClientInfo = styled.div`
+  margin-bottom: 2rem;
+`;
 
 const Name = styled.h3``;
 

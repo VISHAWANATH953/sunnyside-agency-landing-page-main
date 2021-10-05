@@ -1,13 +1,20 @@
-import react from "react";
+import react, { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
 import Logo from "../../svg/logo.svg";
+import hamBurger from "../../svg/icon-hamburger.svg";
+import arrow from "../../svg/icon-arrow-down.svg";
 
 const Navbar: react.FC = () => {
-  const SmNav: boolean = false;
+  const Mobile = useMediaQuery({ query: "(max-width:550px)" });
+  const [navOpen, setNavOpen] = useState<boolean>(false);
+  const navBtnClick = () => {
+    navOpen ? setNavOpen(false) : setNavOpen(true);
+  };
   return (
     <Nav>
       <ImgLogo src={Logo} />
-      {!SmNav && (
+      {!Mobile && (
         <Ul>
           <Li>About</Li>
           <Li>Services</Li>
@@ -15,14 +22,14 @@ const Navbar: react.FC = () => {
           <LiA>contact</LiA>
         </Ul>
       )}
-      {SmNav && <Menu />}
-      {SmNav && (
+      {Mobile && <Menu src={hamBurger} onClick={navBtnClick} />}
+      {Mobile && navOpen && (
         <ShowBox>
           <SmUl>
-            <SmLi></SmLi>
-            <SmLi></SmLi>
-            <SmLi></SmLi>
-            <SmLiA></SmLiA>
+            <SmLi>About</SmLi>
+            <SmLi>Services</SmLi>
+            <SmLi>Projects</SmLi>
+            <SmLiA>contact</SmLiA>
           </SmUl>
         </ShowBox>
       )}
@@ -33,17 +40,14 @@ const Navbar: react.FC = () => {
 export default Navbar;
 
 const Nav = styled.nav`
+  position: absolute;
   display: flex;
   width: 100%;
   height: auto;
   justify-content: space-between;
   padding: 2rem 3rem;
   flex-flow: row nowrap;
-  position: absolute;
   color: #fff;
-  top: 0;
-  left: 0;
-  right: 0;
   font-weight: 600;
   font-size: 1.7rem;
   text-align: center;
@@ -52,6 +56,7 @@ const Nav = styled.nav`
 
 const ImgLogo = styled.img`
   cursor: pointer;
+  height: 4rem;
 `;
 
 const Ul = styled.ul`
@@ -81,12 +86,39 @@ const LiA = styled(Li)`
   }
 `;
 
-const Menu = styled.img``;
+const Menu = styled.img`
+  position: relative;
+  object-fit: cover;
+  width: 5rem;
+  height: auto;
+  cursor: pointer;
+`;
 
-const ShowBox = styled.div``;
+const ShowBox = styled.div`
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 90vw;
+  height: 30vh;
+  color: #000;
+  background: #fff;
+  top: 25vh;
+  right: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
 
 const SmUl = styled.div``;
 
-const SmLi = styled.li``;
+const SmLi = styled(Li)`
+  padding: 1rem 0;
+`;
 
-const SmLiA = styled.li``;
+const SmLiA = styled(LiA)`
+  background: #f6fa00;
+  color: #000;
+  &:hover {
+    background: #fff;
+    color: #ffffff6c;
+  }
+`;

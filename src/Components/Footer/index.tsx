@@ -28,7 +28,7 @@ export default Footer;
 
 const FooterDiv = styled.footer`
   width: 100%;
-  height: 40vh;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;

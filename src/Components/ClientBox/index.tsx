@@ -42,17 +42,25 @@ const ClientBoxDiv = styled.div`
   flex-flow: column nowrap;
   width: 100%;
   height: 100vh;
+
+  @media only screen and (max-width: 768px) {
+    height: 150vh;
+  }
 `;
 
 const Head = styled.h2`
- letter-spacing: .5rem;
- color:#6e6e6e;
+  letter-spacing: 0.5rem;
+  color: #6e6e6e;
 `;
 
 const ClientRow = styled.div`
- display: flex;
- align-items: center; 
- justify-content: space-around;
- flex-flow: row nowrap;
- width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-flow: row nowrap;
+  width: 100%;
+
+  @media only screen and (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `;

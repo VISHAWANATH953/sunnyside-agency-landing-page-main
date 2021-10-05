@@ -21,7 +21,7 @@ export default SmImgBox;
 
 const SmImgDiv = styled.div`
    width: 100%;
-   height: 40vh;
+   height: 50vh;
    display: flex;
    align-items: flex-start;
    justify-content: flex-start;
