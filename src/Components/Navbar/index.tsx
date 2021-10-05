@@ -3,7 +3,6 @@ import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
 import Logo from "../../svg/logo.svg";
 import hamBurger from "../../svg/icon-hamburger.svg";
-import arrow from "../../svg/icon-arrow-down.svg";
 
 const Navbar: react.FC = () => {
   const Mobile = useMediaQuery({ query: "(max-width:550px)" });
