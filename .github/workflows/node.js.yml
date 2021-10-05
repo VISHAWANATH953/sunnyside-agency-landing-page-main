@@ -21,4 +21,8 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@4.1.1
       with:
           branch: gh-pages
+<<<<<<< HEAD
           folder: build
+=======
+          folder: dist
+>>>>>>> 147bce1a6950c256523ef468921be860c7f1612b
